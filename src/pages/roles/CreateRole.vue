@@ -39,7 +39,7 @@ const formdata= reactive({
 })
 
 const formSubmit=()=>{
-    axios.post(`http://localhost/VueCompositionApi/eCommerce/public/api/roles`,formdata)
+    axios.post(`http://localhost/eCommerce/public/api/roles`,formdata)
     .then(res=>{
         console.log(res);
         router.push({path: '/roles'})
