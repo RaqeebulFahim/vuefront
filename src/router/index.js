@@ -2,6 +2,8 @@
 import Brands from '@/pages/brands/Brands.vue';
 import CreateBrand from '@/pages/brands/CreateBrand.vue';
 import Updatebrand from '@/pages/brands/Updatebrand.vue';
+import Colors from '@/pages/colors/Colors.vue';
+import CreateColor from '@/pages/colors/CreateColor.vue';
 import Home from '@/pages/Home.vue';
 import NotFound from '@/pages/NotFound.vue';
 import CreateRole from '@/pages/roles/CreateRole.vue';
@@ -26,6 +28,10 @@ const routes = [
 
   { path: '/brands', component: Brands },
   { path: '/createbrand', component: CreateBrand },
+  { path: '/brands/edit/:id', component: Updatebrand },
+
+  { path: '/colors', component: Colors },
+  { path: '/createcolor', component: CreateColor },
   { path: '/brands/edit/:id', component: Updatebrand },
   
   { path: '/:pathMatch(.*)*', component: NotFound },

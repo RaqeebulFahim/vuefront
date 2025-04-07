@@ -82,7 +82,7 @@ const deleterole = (id)=>{
                                 <th>
                                   <RouterLink :to="`/roles/edit/${role.id}`" class="btn btn-primary">Edit</RouterLink>
                                      <a class="btn btn-danger" @click="deleterole(role.id )">Delete</a>  
-                                </th>
+                                        </th>
                             </tr>
                         </tbody>
                     </table>
