@@ -29,6 +29,8 @@ const routes = [
   { path: '/roles', component: Roles },
   { path: '/createrole', component: CreateRole },
   { path: '/roles/edit/:id', component: UpdateRole },
+  
+  { path: '/users', component: Users },
 
   { path: '/brands', component: Brands },
   { path: '/createbrand', component: CreateBrand },
