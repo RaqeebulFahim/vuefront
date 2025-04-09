@@ -13,6 +13,9 @@ import CreateRole from '@/pages/roles/CreateRole.vue';
 import Roles from '@/pages/roles/Roles.vue';
 import UpdateRole from '@/pages/roles/UpdateRole.vue';
 import Shop from '@/pages/Shop.vue';
+import CreateStock from '@/pages/stocks/CreateStock.vue';
+import Stocks from '@/pages/stocks/Stocks.vue';
+import UpdateStock from '@/pages/stocks/UpdateStock.vue';
 import Users from '@/pages/users/Users.vue';
 
 
@@ -36,14 +39,9 @@ const routes = [
   { path: '/createbrand', component: CreateBrand },
   { path: '/brands/edit/:id', component: Updatebrand },
 
-  { path: '/users', component: Users },
-
-  { path: '/category', component: Category },
-  { path: '/createcategory', component: CreateCategory },
-  { path: '/category/edit/:id', component: UpdateCategory },
-
-  // { path: '/createcolor', component: CreateColor },
-  // { path: '/brands/edit/:id', component: Updatebrand },
+  { path: '/stocks', component: Stocks},
+  { path: '/createstock', component: CreateStock },
+  { path: '/stocks/edit/:id', component: UpdateStock },
   
   { path: '/:pathMatch(.*)*', component: NotFound },
 ]
