@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bod">
     <div class="title">
         <h4>Category Table</h4>
     </div>
@@ -71,6 +71,11 @@ const deletecategory=(id)=>{
 
 
 <style scoped>
+
+.bod {
+  margin: 20px;
+  padding: 20px;
+}
 
 .title{
  text-align: center;

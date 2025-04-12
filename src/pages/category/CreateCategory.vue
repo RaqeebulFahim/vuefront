@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <div class="title">
       <h4>Create Category</h4>
     </div>
@@ -86,4 +86,6 @@ api.post("/category", formData)
   border-radius: 20px;
   font-weight: 100;
 }
+
+
 </style>

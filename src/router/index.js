@@ -2,7 +2,7 @@
 import Brands from '@/pages/brands/Brands.vue';
 import CreateBrand from '@/pages/brands/CreateBrand.vue';
 import Updatebrand from '@/pages/brands/Updatebrand.vue';
-import Category from '@/pages/category/category.vue';
+import Category from '@/pages/category/Category.vue';
 import CreateCategory from '@/pages/category/CreateCategory.vue';
 import UpdateCategory from '@/pages/category/UpdateCategory.vue';
 // import Colors from '@/pages/colors/Colors.vue';
@@ -38,6 +38,10 @@ const routes = [
   { path: '/brands', component: Brands },
   { path: '/createbrand', component: CreateBrand },
   { path: '/brands/edit/:id', component: Updatebrand },
+
+  { path: '/category', component: Category },
+  { path: '/createcategory', component: CreateCategory },
+  { path: '/category/edit/:id', component: UpdateCategory },
 
   { path: '/stocks', component: Stocks},
   { path: '/createstock', component: CreateStock },

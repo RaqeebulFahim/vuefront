@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">
-      <h4>Create Category</h4>
+      <h4>Update Category</h4>
     </div>
     <div>
       <router-link class="btn btn-info index" to="/category">Category Index</router-link>

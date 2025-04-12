@@ -205,7 +205,7 @@ const fetchUsers = (url = "/users") => {
                                         <th class="sort" data-sort="employee" scope="col">Employee</th>
                                         <th class="sort" data-sort="email" scope="col">Email</th>
                                         <th class="sort" data-sort="contact" scope="col">contact</th>
-                                        <th class="sort" data-sort="contact" scope="col">Role Id</th>
+                                        <th class="sort" data-sort="contact" scope="col">Role</th>
                                         <th class="sort" data-sort="date" scope="col">Photo</th>
 
                                         <th class="sort" data-sort="action" scope="col">Edit</th>
@@ -220,7 +220,7 @@ const fetchUsers = (url = "/users") => {
                                         <td class="employee">{{ user.name }}</td>
                                         <td class="email">{{ user.email }}</td>
                                         <td class="contact">{{ user.mobile }}</td>
-                                        <td class="role">{{ user.role_id }}</td>
+                                        <td class="role">{{ user.role.name }}</td>
                                      
                                         <td class="date"><img :src="`${imgUrl}/${user.photo}`" width="100" alt="" srcset=""></td>
                                         <td class="edit"><button class="btn edit-item-btn btn-sm btn-success"
