@@ -1,4 +1,5 @@
 
+import MainLayout from '@/layouts/MainLayout.vue';
 import Brands from '@/pages/brands/Brands.vue';
 import CreateBrand from '@/pages/brands/CreateBrand.vue';
 import Updatebrand from '@/pages/brands/Updatebrand.vue';
@@ -8,6 +9,9 @@ import UpdateCategory from '@/pages/category/UpdateCategory.vue';
 // import Colors from '@/pages/colors/Colors.vue';
 // import CreateColor from '@/pages/colors/CreateColor.vue';
 import Home from '@/pages/Home.vue';
+import Authrecover from '@/pages/LoginRegister/Authrecover.vue';
+import Register from '@/pages/LoginRegister/Register.vue';
+import Signin from '@/pages/LoginRegister/Signin.vue';
 import NotFound from '@/pages/NotFound.vue';
 import CreateRole from '@/pages/roles/CreateRole.vue';
 import Roles from '@/pages/roles/Roles.vue';
@@ -23,32 +27,46 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 
 
+
 const routes = [
 
-  { path: '/', component: Home },
-  { path: '/home', component: Home },
-  { path: '/shop', component: Shop },
+  {path: '/login', name: 'Login', component: Signin, meta: { public: true },},
+  {path: '/register', name: 'Register', component: Register, meta: { public: true },},
+  {path: '/authrecover', name: 'Authrecover', component: Authrecover, meta: { public: true },},
 
-  { path: '/roles', component: Roles },
-  { path: '/createrole', component: CreateRole },
-  { path: '/roles/edit/:id', component: UpdateRole },
-  
-  { path: '/users', component: Users },
-
-  { path: '/brands', component: Brands },
-  { path: '/createbrand', component: CreateBrand },
-  { path: '/brands/edit/:id', component: Updatebrand },
-
-  { path: '/category', component: Category },
-  { path: '/createcategory', component: CreateCategory },
-  { path: '/category/edit/:id', component: UpdateCategory },
-
-  { path: '/stocks', component: Stocks},
-  { path: '/createstock', component: CreateStock },
-  { path: '/stocks/edit/:id', component: UpdateStock },
-  
+  {
+    path: '/',
+    component: MainLayout,
+    children: [
+      
+      { path: '/', component: Home },
+      { path: 'home', component: Home },
+      { path: 'shop', component: Shop },
+    
+      { path: 'roles', component: Roles },
+      { path: 'createrole', component: CreateRole },
+      { path: 'roles/edit/:id', component: UpdateRole },
+      
+      { path: 'users', component: Users },
+    
+      { path: 'brands', component: Brands },
+      { path: 'createbrand', component: CreateBrand },
+      { path: 'brands/edit/:id', component: Updatebrand },
+    
+      { path: 'category', component: Category },
+      { path: 'createcategory', component: CreateCategory },
+      { path: 'category/edit/:id', component: UpdateCategory },
+    
+      { path: 'stocks', component: Stocks},
+      { path: 'createstock', component: CreateStock },
+      { path: 'stocks/edit/:id', component: UpdateStock },
+    ],
+  },
   { path: '/:pathMatch(.*)*', component: NotFound },
 ]
+
+
+
 
 const router = createRouter({
   history: createWebHistory(),
