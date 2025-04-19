@@ -1579,6 +1579,26 @@
 </template>
 
 <script  setup>
+import api from '@/Api';
+import { onMounted } from 'vue';
+
+const fetchProduct=()=>{
+    api.get("/ecom/products")
+    .then((result) => {
+        console.log(result.data.products);
+        
+    }).catch((err) => {
+        
+    });
+}
+
+onMounted(() => {
+  fetchProduct()
+})
+
+
+
+
 
 </script>
 

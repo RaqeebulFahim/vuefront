@@ -1,8 +1,12 @@
 
+import ShoppingCart from '@/components/ShoppingCart.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 import Brands from '@/pages/brands/Brands.vue';
 import CreateBrand from '@/pages/brands/CreateBrand.vue';
 import Updatebrand from '@/pages/brands/Updatebrand.vue';
+import Checkout from '@/pages/cart/Checkout.vue';
+import Invoice from '@/pages/cart/Invoice.vue';
+import ViewCart from '@/pages/cart/ViewCart.vue';
 import Category from '@/pages/category/Category.vue';
 import CreateCategory from '@/pages/category/CreateCategory.vue';
 import UpdateCategory from '@/pages/category/UpdateCategory.vue';
@@ -60,6 +64,11 @@ const routes = [
       { path: 'stocks', component: Stocks},
       { path: 'createstock', component: CreateStock },
       { path: 'stocks/edit/:id', component: UpdateStock },
+
+      { path: 'invoice', component: Invoice },
+      { path: 'checkout', component: Checkout },
+      { path: 'viewcart', component: ViewCart },
+      { path: 'shoppingcart', component: ShoppingCart },
     ],
   },
   { path: '/:pathMatch(.*)*', component: NotFound },

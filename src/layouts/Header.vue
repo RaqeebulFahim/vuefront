@@ -12,7 +12,7 @@
                             </a>
                         </div>
                         <div class="col-md-4 col-6">
-                            <a href="index.html" class="logo-header">
+                                <a href="/home" class="logo-header"><i class="icon "></i>
                                 <img src="/assets/images/logo/logo-blue2.svg" alt="logo" class="logo">
                             </a>
                         </div>
