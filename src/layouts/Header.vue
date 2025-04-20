@@ -98,7 +98,7 @@
                                 <li class="nav-account"><a href="#login" data-bs-toggle="modal" class="nav-icon-item align-items-center gap-10"><i class="icon icon-account"></i> <span class="text">Login</span></a></li>
                                 <li class="nav-compare"><a href="compare.html" class="nav-icon-item align-items-center gap-10"><i class="icon icon-compare"></i><span class="text">Compare</span></a></li>
                                 <li class="nav-wishlist"><a href="wishlist.html" class="nav-icon-item  align-items-center gap-10"><i class="icon icon-heart"></i><span class="text">Wishlist</span></a></li>
-                                <li class="nav-cart cart-lg"><a href="#shoppingCart" data-bs-toggle="modal" class="nav-icon-item"><i class="icon icon-bag"></i><span class="count-box">6</span></a></li>
+                                <li class="nav-cart cart-lg"><RouterLink to="/viewcart" data-bs-toggle="modal1223" class="nav-icon-item"><i class="icon icon-bag"></i><span class="count-box">6</span></RouterLink></li>
                             </ul>
                         </div>
                     </div>

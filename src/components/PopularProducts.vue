@@ -39,8 +39,8 @@
                     <div class="tab-pane active show" id="meat" role="tabpanel">
                         <div class="tf-grid-layout tf-col-2 xl-col-4">
 
-                            <!-- card product 1 -->
-                            <div class="card-product style-9">
+                           
+                            <div  v-for="product in products" :key="products.id" class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
                                         <img class="lazyload img-product"
@@ -72,12 +72,11 @@
                                 </div>
                                 <div class="card-product-info">
                                     <div class="inner-info">
-                                        <a href="product-detail.html" class="title link fw-6">Ocado Little Gem
-                                            Lettuce</a>
-                                        <span class="price fw-6">$85.00</span>
+                                        <a href="product-detail.html" class="title link fw-6">{{ product.name }}a</a>
+                                        <span class="price fw-6"> ${{ product.price }}.00</span>
                                     </div>
                                     <div class="list-product-btn">
-                                        <a href="#quick_add" data-bs-toggle="modal"
+                                        <a @click="addToCart(product)"  data-bs-toggle="modal-123"
                                             class="box-icon quick-add tf-btn-loading">
                                             <span class="icon icon-bag"></span>
                                             <span class="tooltip">Add to cart</span>
@@ -86,8 +85,8 @@
 
                                 </div>
                             </div>
-                            <!-- card product 2 -->
-                            <div class="card-product style-9">
+                           
+                            <!-- <div class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
                                         <img class="lazyload img-product" data-src="/assets/images/products/fruits.jpg"
@@ -131,7 +130,7 @@
 
                                 </div>
                             </div>
-                            <!-- card product 3 -->
+                            
                             <div class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
@@ -176,7 +175,7 @@
 
                                 </div>
                             </div>
-                            <!-- card product 4 -->
+                          
                             <div class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
@@ -221,7 +220,7 @@
 
                                 </div>
                             </div>
-                            <!-- card product 5 -->
+                           
                             <div class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
@@ -266,7 +265,7 @@
 
                                 </div>
                             </div>
-                            <!-- card product 6 -->
+                           
                             <div class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
@@ -311,7 +310,7 @@
 
                                 </div>
                             </div>
-                            <!-- card product 7 -->
+                          
                             <div class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
@@ -355,9 +354,9 @@
                                     </div>
 
                                 </div>
-                            </div>
-                            <!-- card product 8 -->
-                            <div class="card-product style-9">
+                            </div> -->
+                           
+                            <!-- <div class="card-product style-9">
                                 <div class="card-product-wrapper">
                                     <a href="product-detail.html" class="product-img">
                                         <img class="lazyload img-product"
@@ -401,7 +400,7 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="tab-pane" id="oils" role="tabpanel">
@@ -1882,17 +1881,23 @@
 
 <script setup>
 import api from '@/Api';
-import { onMounted } from 'vue';
+import { useCart } from '@/pages/cart/Cart';
+import { onMounted, ref } from 'vue';
+const products=ref([])
 
-const fetchProduct = () => {
+const cart=useCart("Sales");
+
+
+const fetchProducts = () => {
     api.get("/ecom/products")
         .then((result) => {
             console.log(result.data.products);
-
+            products.value=result.data.products
         }).catch((err) => {
-
+console.log(err)
         });
 }
+
 
 
 const ProductCart = () => {
@@ -1906,8 +1911,27 @@ const ProductCart = () => {
     size_id=""
 }
 
+
+const addToCart=(product)=>{
+    //  console.log(product);
+    
+   const data={
+      item_id:product.id,
+      name:product.name,
+      price:product.price,
+      discount:0,
+      subtotal:product.price,
+      qty:1,
+      img:product.images[0].image_name
+   }
+   cart.save(data)
+   console.log(data);
+   
+}
+
 onMounted(() => {
-  fetchProduct()
+  fetchProducts()
+
 })
 
 
